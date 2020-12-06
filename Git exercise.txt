@@ -1,0 +1,14 @@
+Part 1
+What git command creates a branch?
+git checkout -b my-branch
+What is the difference between a fast-forward and recursive merge?
+ and with In the recursive merge it is multiple lines while with fast forward merge you have a straight line of history.
+What git command changes to another branch?
+git checkout NAME_OF_BRANCH
+What git command deletes a branch?
+git branch -d NAME_OF_BRANCH
+How do merge conflicts happen?
+A conflict arises when two separate branches have made edits to the same line in a file, 
+or when a file has been deleted in one branch but edited in the other. 
+
+
