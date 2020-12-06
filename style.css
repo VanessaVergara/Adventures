@@ -1,57 +1,56 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 body {
-  height: 100vh;
-  background: #3587a4;
+  font-family: helvetica;
+  margin: 30px;
 }
 
-img {
-  width: 100px;
-}
-
-.memory-game {
-  width: 640px;
-  height: 640px;
-  margin: auto;
+section {
+  border: 2px solid grey;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px 10px 10px 0;
   display: flex;
-  flex-wrap: wrap;
-  perspective: 1000px;
 }
 
-.memory-card {
-  width: calc(25% - 10px);
-  height: calc(33.33% - 10px);
-  position: relative;
-  margin: 5px;
-  transform: scale(1);
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-  background-color: cornflowerblue;
-  border-radius: 5%;
+aside {
+  justify-content: space-between;
+  flex-basis: 50%;
+  padding: 4px 18px;
 }
 
-.memory-card.flip {
-  transform: rotateY(180deg);
+input {
+  display: block;
+  margin: 10px 0 20px 0;
+  border-radius: 5px;
+  border: 1px solid grey;
+  font-size: 20px;
+  padding: 6px;
 }
 
-.memory-card:active {
-  transform: scale(0.97);
-  transition: transform.2s;
+button {
+  cursor: pointer;
+  width: 90px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid grey;
+  font-size: 16px;
 }
 
-.front-face,
-.back-face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  border: 2px solid black;
-  border-radius: 5%;
-  backface-visibility: hidden;
+td {
+  text-align: center;
+  border: 1px solid grey;
 }
-.front-face {
-  transform: rotateY(180deg);
+
+table {
+  margin: 50px 0;
+  border-collapse: collapse;
+  padding: 4px;
+  width: 80%;
+}
+
+#summary td {
+  border: none;
+}
+
+.deleteBtn {
+  cursor: pointer;
 }
