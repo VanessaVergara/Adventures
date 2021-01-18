@@ -41,37 +41,7 @@ function makeHtmlBoard() {
     board.append(row);
   }
 }
-/*function makeBoard() {
-    for (let y = 0; y < HEIGHT; y++){
-        board.push(Array.from({length: WIDTH}));
 
-    }
-}
-
-function makeHtmlBoard() {
-    const board = document.getElementById('board');
-    const top = document.createElement('tr');
-    top.setAttribute('id','column-top');
-    top.addEventListener('click',handleClick);
-
-    for(let x = 0; x < WIDTH; x++) {
-        const headCell = document.createElement('td');
-        headCell.setAttribute('id',x);
-        top.append(headCell);
-    }
-    board.append(top);
-
-    for (let y=0; y < HEIGHT; y++){
-        const row = document.createElement('tr');
-
-    for(let x = 0; x < WIDTH; x++) {
-            const cell = document.createElement('td');
-            cell.setAttribute('id', `${y} - ${x}`);
-            row.append(cell);
-        }
-       board.append(row);
-    }
-}*/
 
 function findSpotForCol(x) {
     for (let y = HEIGHT - 1; y >=0; y--){
