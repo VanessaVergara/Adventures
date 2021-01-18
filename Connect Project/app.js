@@ -4,18 +4,16 @@ const HEIGHT = 6;
 let currPlayer =1;
 let board = [];
 
-function makeBoard() {
+function makeBoard(){
   for (let y = 0; y < HEIGHT; y++) {
     board.push(Array.from({ length: WIDTH }));
   }
 }
 
-/** makeHtmlBoard: make HTML table and row of column tops. */
-
 function makeHtmlBoard() {
   const board = document.getElementById('board');
 
-  // make column tops (clickable area for adding a piece to that column)
+ 
   const top = document.createElement('tr');
   top.setAttribute('id', 'column-top');
   top.addEventListener('click', handleClick);
@@ -28,7 +26,7 @@ function makeHtmlBoard() {
 
   board.append(top);
 
-  // make main part of board
+ 
   for (let y = 0; y < HEIGHT; y++) {
     const row = document.createElement('tr');
 
