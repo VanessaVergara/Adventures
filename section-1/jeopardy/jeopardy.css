@@ -1,0 +1,18 @@
+body {
+  background-color: #115ff4;
+}
+
+.btn {
+  display: flex;
+  margin: auto;
+  padding: 1%;
+  justify-content: center;
+}
+table {
+  position: absolute;
+}
+
+.first {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
