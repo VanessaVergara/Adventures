@@ -173,6 +173,7 @@ function fillTable(NUM_CATEGORIES, allQuestions) {
         console.log(text);
          let newTr = document.createElement('tr');
          document.querySelector(".tbody").appendChild(newTr);
+         
 
     for (let items of allQuestions) {
         let newTd = document.createElement("td");
@@ -195,20 +196,39 @@ function fillTable(NUM_CATEGORIES, allQuestions) {
  * */
 
 function handleClick(evt) {
-    $("td").on("click", function(e){
-        console.log(e.target)
-
-        if($(e.target).is(".null")) {//if null show question
-            console.log("clicked on a question mark! here is the question")
-            $(e.target).css("visibility","hidden"); //question mark will be hidden
-            $(e.target).parent().find(".question").css("visibility","visible") 
-        } 
-        if ($(e.target).is(".question")) {
-            $(e.target).css("visibility","hidden");
-            $(e.target).parent().find(".answer").css("visibility","visible")     
-       }  
+    let td = querySelectorAll('td:nth-child');
+    let td_array = Array.from(td);
+    li_array.forEach(function(elem){
+        elem.addEventListener('click',function(e){
+           if (e.target === null) { 
+             console.log('clicked on a question mark! here is the question')
+             $(e.target).css("visibility","hidden");
+              $(e.target).parent().find(".question").css("visibility","visible") 
+           }else if (e.target === '.question') {
+               
+                $(e.target).parent().find(".question").css("visibility","hidden") 
+                 $(e.target).parent().find(".answer").css("visibility","visible")
+             
+             }         
+         
         
-    })
+        })
+    });
+    
+    // $("td").on("click", function(e){
+    //     console.log(e.target)
+
+    //     if($(e.target).is(".null")) {//if null show question
+    //         console.log("clicked on a question mark! here is the question")
+    //         $(e.target).css("visibility","hidden"); //question mark will be hidden
+    //         $(e.target).parent().find(".question").css("visibility","visible") 
+    //     } 
+    //     if ($(e.target).is(".question")) {
+    //         $(e.target).css("visibility","hidden");
+    //         $(e.target).parent().find(".answer").css("visibility","visible")     
+    //    }  
+        
+    // })
 }
 
 
@@ -260,7 +280,7 @@ console.log(catIds)
 // TODO
 $(document).ready(function(){
     $('button').on('click',function(){
-
+   
         setupAndStart();
 
     });
