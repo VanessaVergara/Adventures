@@ -1,4 +1,4 @@
-// categories is the main data structure for the app; it looks like this:
+//categories is the main data structure for the app; it looks like this:
 
 
 
@@ -164,40 +164,25 @@ getCategoryIds();
 
 function fillTable(NUM_CATEGORIES, allQuestions) {
     
-    // for(let cat of categories) {
-    //     let newTh = document.createElement("th");
-    //     let text = document.createTextNode(cat.title);
-    //     newTh.appendChild(text);
-    //     document.querySelector(".thead").appendChild(newTh);
-
-    //     let newTr = document.createElement("tr");
-    //     document.querySelector(".tbody").appendChild(newTr);
-    
    
-
-    //     clueArray.forEach(function (cat) {
-    //         let newTd = document.createElement("td");
-    //         newTd.innerText = "?";
-    //         newTd.id = 'td';
-    //         //newTd.bind('click',handleClick);
-    //         newTr.appendChild(newTd);
-    //     })
-    // }
  for (let cat of NUM_CATEGORIES) {
       let newTh = document.createElement("th");
          let text = document.createTextNode(cat.title);
         newTh.appendChild(text);
         document.querySelector(".thead").appendChild(newTh);
         console.log(text);
-         let newTr= document.createElement('tr');
+         let newTr = document.createElement('tr');
          document.querySelector(".tbody").appendChild(newTr);
- }
- for (let _items of allQuestions) {
+
+    for (let items of allQuestions) {
         let newTd = document.createElement("td");
             newTd.innerText = "?";
             newTd.id = 'td';
-}   
- newTr.appendChild(newTd);
+         newTr.appendChild(newTd);
+    }   
+}
+
+
 
 }
 
@@ -261,11 +246,11 @@ function hideLoadingView() {
 //async removed
 async function setupAndStart() {
 
-await Promise.all(getCategoryIds()) 
+let catIds = await getCategoryIds();
 await(getCategory(catIds))
-
-  //clearTable();
-  fillTable(NUM_CATEGORIES,allQuestions); 
+console.log(catIds)
+  clearTable();
+   fillTable(NUM_CATEGORIES,allQuestions); 
 
 }
 
@@ -292,5 +277,3 @@ $(document).ready(function(){
 
 
 // TODO
-
-//
